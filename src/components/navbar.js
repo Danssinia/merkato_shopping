@@ -5,7 +5,7 @@ import { IoMdMenu } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { HiOutlineMenu } from "react-icons/hi";
-
+import { Link } from "react-router-dom";
 import { useState } from "react";
 const NavBar = () => {
 
@@ -23,12 +23,12 @@ const NavBar = () => {
         setIsOpen((prevstate)=>!prevstate)    }
 
     return ( 
-        <div className="w-full border-b border-gray-200">
+        <div className="max-w-[90%] m-auto border-b border-gray-200">
 
             {/*Code for the first section of the navbar*/}
 
             <div className="flex p-4 justify-between">
-                <h1 className="text-3xl font-bold">መርካቶ</h1>
+                <Link to="/"><h1 className="text-3xl font-bold">መርካቶ Shopping</h1></Link>
                 <div>
                     <form action="">
                         <div className="max-sm:hidden flex rounded-sm h-10 w-[550px] bg-white pl-2 border-2 border-[#E7E7E7]">
@@ -78,11 +78,11 @@ const NavBar = () => {
                    </ul> 
                 </div>
                 <ul className="flex gap-14">
-                    <li className="flex items-end gap-1"><a href="">Home</a><IoIosArrowDown size={20}/></li>
-                    <li className="flex items-end gap-1"><a href="">Pages</a><IoIosArrowDown size={20}/></li>
-                    <li className="flex items-end gap-1"><a href="">Shop</a><IoIosArrowDown size={20}/></li>
-                    <li className="flex items-end gap-1"><a href="">Blog</a><IoIosArrowDown size={20}/></li>
-                    <li className="flex items-end gap-1"><a href="">Gallery</a><IoIosArrowDown size={20}/></li>
+                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="/">Home</Link></li>
+                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="/products">Products</Link></li>
+                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="">About Us</Link></li>
+                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><a href="">Contact</a></li>
+                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><a href="">Blog</a></li>
                 </ul>
 
                 <div className="relative bg-[#FF6251] ">
