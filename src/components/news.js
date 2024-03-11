@@ -12,27 +12,27 @@ const News = () => {
     return ( 
         <div className="max-w-[85%] m-auto mt-14">
             <div className="flex justify-between">
-                <p className="font-bold text-2xl">Marketplace News</p>
-                <p className="text-[#85B735] font-semibold">View All Articles</p>
+                <p className="max-sm:text-xl font-bold text-2xl">Marketplace News</p>
+                <p className="text-[#85B735] flex justify-center items-center font-semibold">View All Articles</p>
             </div>
 
-            <div className='grid grid-cols-3 gap-8 mt-10 mb-10'>
-                <div className='border shadow-lg hover:shadow-2xl hover:duration-700'>
-                <img src={hum1} alt="" className='w-full'/>
+            <div className='max-sm:flex max-sm:flex-col grid grid-cols-3 gap-8 mt-10 mb-10'>
+                <div className='max-sm:rounded-lg border shadow-lg hover:shadow-2xl hover:duration-700'>
+                <img src={hum1} alt="" className='w-full max-sm:h-[300px] max-sm:object-cover'/>
+                <p className='text-blue-600  font-bold max-w-[85%] m-auto pt-6'>Electronics</p>
+                <p className='max-w-[85%] hover:text-[#51AA1B] cursor-pointer hover:duration-700  m-auto py-4 text-2xl font-bold'>Motivation is Not Enough For People! Discipline Is.</p>
+                <p className='max-w-[85%] m-auto text-slate-500 flex gap-8 pb-10'><span className='flex text-xs justify-center items-center gap-4'><FaRegCommentAlt size={20} />0</span> <span className='flex justify-center items-center gap-4 text-xs'><FaRegClock size={20}/>March 1,2024</span></p>
+                </div>
+
+                <div className='max-sm:rounded-lg border shadow-lg hover:shadow-2xl hover:duration-700'>
+                <img src={hum2} alt="" className='max-sm:h-[300px] max-sm:object-cover'/>
                 <p className='text-blue-600 font-bold max-w-[85%] m-auto pt-6'>Electronics</p>
                 <p className='max-w-[85%] hover:text-[#51AA1B] cursor-pointer hover:duration-700  m-auto py-4 text-2xl font-bold'>Motivation is Not Enough For People! Discipline Is.</p>
                 <p className='max-w-[85%] m-auto text-slate-500 flex gap-8 pb-10'><span className='flex text-xs justify-center items-center gap-4'><FaRegCommentAlt size={20} />0</span> <span className='flex justify-center items-center gap-4 text-xs'><FaRegClock size={20}/>March 1,2024</span></p>
                 </div>
 
-                <div className='border shadow-lg hover:shadow-2xl hover:duration-700'>
-                <img src={hum2} alt="" />
-                <p className='text-blue-600 font-bold max-w-[85%] m-auto pt-6'>Electronics</p>
-                <p className='max-w-[85%] hover:text-[#51AA1B] cursor-pointer hover:duration-700  m-auto py-4 text-2xl font-bold'>Motivation is Not Enough For People! Discipline Is.</p>
-                <p className='max-w-[85%] m-auto text-slate-500 flex gap-8 pb-10'><span className='flex text-xs justify-center items-center gap-4'><FaRegCommentAlt size={20} />0</span> <span className='flex justify-center items-center gap-4 text-xs'><FaRegClock size={20}/>March 1,2024</span></p>
-                </div>
-
-                <div className='border shadow-lg hover:shadow-2xl hover:duration-700'>
-                <img src={hum3} alt="" />
+                <div className='max-sm:rounded-lg border shadow-lg hover:shadow-2xl hover:duration-700'>
+                <img src={hum3} alt="" className='max-sm:h-[300px] max-sm:object-cover' />
                 <p className='text-blue-600 font-bold max-w-[85%] m-auto pt-6'>Electronics</p>
                 <p className='max-w-[85%] hover:text-[#51AA1B] cursor-pointer hover:duration-700  m-auto py-4 text-2xl font-bold'>Motivation is Not Enough For People! Discipline Is.</p>
                 <p className='max-w-[85%] m-auto text-slate-500 flex gap-8 pb-10'><span className='flex text-xs justify-center items-center gap-4'><FaRegCommentAlt size={20} />0</span> <span className='flex justify-center items-center gap-4 text-xs'><FaRegClock size={20}/>March 1,2024</span></p>
@@ -43,12 +43,12 @@ const News = () => {
 
             <div className='mt-24 border-t'>
             <h1 className='text-4xl font-serif font-bold pt-10'>Safe Payments With</h1>
-            <div className='grid grid-cols-5 gap-10'>
-                <img src={chapa} alt="" className='h-full object-contain'/>
-                <img src={yene} alt="" className='h-full object-contain'/>
-                <img src={TeleBirr} alt="" className='h-full object-contain' />
-                <img src={Amole} alt="" className='h-full object-contain' />
-                <img src={CBE} alt="" className='h-full object-contain'/>
+            <div className='mt-10 grid grid-cols-5 gap-10 max-sm:justify-center max-sm:items-center max-sm:flex max-sm:flex-col'>
+                <img src={chapa} alt="" className='max-sm:w-[150px]  h-full object-contain'/>
+                <img src={yene} alt="" width={140} className='max-sm:ml-0 ml-10 h-full object-contain'/>
+                <img src={TeleBirr} alt="" width={80} className='max-sm:ml-0 ml-10 h-full object-contain' />
+                <img src={Amole} alt="" width={100} className='h-full object-contain' />
+                <img src={CBE} alt="" width={100} className='h-full object-contain'/>
             </div>
             </div>
             

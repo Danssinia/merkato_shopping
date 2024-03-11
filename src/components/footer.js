@@ -1,8 +1,9 @@
 const Footer = () => {
     return ( 
         <div className="mt-32 border-t">
-            <div className="pt-10 grid grid-cols-4 gap-20 max-w-[80%]  m-auto">
+            <div className="max-sm:flex max-sm:flex-col  pt-10 grid grid-cols-4 gap-20 max-w-[80%]  m-auto">
             <div><p className="text-3xl font-serif font-bold">መርካቶ Shopping</p></div>
+            
             <ul className="font-serif grid gap-3 text-gray-500"><p className="text-black font-bold text-2xl">Quick Links</p>
                 <li>Support Center</li>
                 <li>Term & Conditions</li>

@@ -17,14 +17,14 @@ const Trending = () => {
    
     return ( 
         <div className="max-w-[85%] m-auto mt-12">
-            <div className='flex justify-between font-semibold border-b text-xl pb-2'>
-                <p className='font-semibold'>Trending Items</p>
-                <div className='flex opacity-[0.6] text-[18px]  gap-10 justify-end'>
+            <div className='max-sm:flex max-sm:flex-col flex max-sm:justify-start max-sm:items-start justify-between font-semibold border-b text-xl pb-2'>
+                <p className='font-semibold max-sm:flex max-sm:justify-center max-sm:items-center'>Trending Items</p>
+                <div className='flex opacity-[0.6] max-sm:pt-4 max-sm:text-sm text-[18px]  gap-10 justify-end'>
                 {trending.map((trend)=>(
                     <p  key={trend.id} onClick={()=>{
                         setColor(trend.id)
                         setSubItem(trend.subItems)
-                    }} className={`cursor-pointer ${color===trend.id ?'text-[#51AA1B] border-b-2  border-[#51AA1B] border-width ':null}`}  >
+                    }} className={` cursor-pointer ${color===trend.id ?'text-[#51AA1B] border-b-2  border-[#51AA1B] border-width ':null}`}  >
                         {trend.title}
                     </p>
                 ))}
@@ -34,12 +34,12 @@ const Trending = () => {
 
             {/*code for sub item*/}
             {subItem.length > 0 && 
-           <div className='grid grid-cols-4 gap-8 mt-8'>
+           <div className='max-sm:flex max-sm:flex-col  grid grid-cols-4 gap-8 mt-8'>
             {subItem.map((subItem)=>(
-                <div className='relative group border hover:opacity-80 hover:duration-500 cursor-pointer' key={subItem.id}>
+                <div className='max-sm:rounded-lg max-sm:pb-10 relative group border hover:opacity-80 hover:duration-500 cursor-pointer' key={subItem.id}>
                     <Link to={`details/${subItem.id}`}>
                     <p className='flex justify-center items-center'><img src={subItem.image} alt="" /></p>
-                    <p className='flex justify-center items-center font-semibold'>{subItem.name}</p>
+                    <p className='max-sm:font-bold max-sm:text-[25px] flex justify-center items-center font-semibold'>{subItem.name}</p>
                     <p className='flex justify-end pr-6 text-[#83B735] font-bold'>{subItem.price}</p>
                     </Link>
                     <span className='hidden group-hover:block absolute top-5 right-10'><CiHeart size={22}/></span>
@@ -51,12 +51,12 @@ const Trending = () => {
             
             {/*code for unique section*/}
 
-            <div className='mt-24 grid grid-cols-5 p-4  shadow-lg shadow-slate-300'>
-                <p className='border-r flex flex-col justify-center items-center font-bold'>Free Delivery <span className='opacity-[0.4] text-sm'>from ETB100</span></p>
-                <p className='border-r flex flex-col justify-center items-center font-bold'>99% Customer <span className='opacity-[0.4] text-sm'>feedback</span></p>
-                <p className='border-r flex flex-col justify-center items-center font-bold'>10 Days <span className='opacity-[0.4] text-sm'>for free return</span></p>
-                <p className='border-r flex flex-col justify-center items-center font-bold'>Payment<span className='opacity-[0.4] text-sm'>Secure System</span></p>
-                <p className='border-r flex flex-col justify-center items-center font-bold'>24/7<span className='opacity-[0.4] text-sm'>Online Support</span></p>
+            <div className='max-sm:flex max-sm:flex-col max-sm:gap-4  mt-24 grid grid-cols-5 p-4  shadow-lg shadow-slate-300'>
+                <p className='border-r max-sm:border max-sm:p-4 flex flex-col justify-center items-center font-bold'>Free Delivery <span className='opacity-[0.4] text-sm'>from ETB100</span></p>
+                <p className='border-r max-sm:border max-sm:p-4 flex flex-col justify-center items-center font-bold'>99% Customer <span className='opacity-[0.4] text-sm'>feedback</span></p>
+                <p className='border-r max-sm:border max-sm:p-4 flex flex-col justify-center items-center font-bold'>10 Days <span className='opacity-[0.4] text-sm'>for free return</span></p>
+                <p className='border-r max-sm:border max-sm:p-4 flex flex-col justify-center items-center font-bold'>Payment<span className='opacity-[0.4] text-sm'>Secure System</span></p>
+                <p className='border-r max-sm:border max-sm:p-4 flex flex-col justify-center items-center font-bold'>24/7<span className='opacity-[0.4] text-sm'>Online Support</span></p>
             </div>
 
             {/*code for banner images*/}
