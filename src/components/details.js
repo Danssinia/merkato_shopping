@@ -43,7 +43,7 @@ export const Deatils = () => {
 
   return (
     <>
-      <div className="max-w-[90%] m-auto grid grid-cols-2 mt-20 ">
+      <div className="max-sm:flex max-sm:flex-col max-w-[90%] m-auto grid grid-cols-2 mt-20 ">
         <div className="relative">
           <img src={subItem.image} width={540} alt="" />
           <div className="absolute top-10 rounded-full w-16 h-16 flex text-white font-semibold justify-center items-center bg-[#62AB00]">
@@ -78,7 +78,7 @@ export const Deatils = () => {
 
       <div className=" w-full">
         <p className="max-w-[85%] m-auto text-3xl font-bold mb-10 mt-10">Related Products</p>
-      <div className=" max-w-[85%]   m-auto grid grid-cols-3 gap-8">
+      <div className=" max-w-[85%] max-sm:flex max-sm:flex-col  m-auto grid grid-cols-3 gap-8">
         {related.map((related) => (
           <Link to={`/details/${related.id}`} onClick={window.scrollTo(0,0)}>
             <div key={related.id} className="group hover:cursor-pointer hover:opacity-70 hover:duration-500 relative shadow-lg hover:shadow-xl border h-[500px] border-slate-300">

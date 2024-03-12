@@ -7,6 +7,8 @@ import { IoIosArrowUp } from "react-icons/io";
 import { HiOutlineMenu } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import MobileMenu from "./mobileMenu";
 const NavBar = () => {
 
     {/*code for arrow control*/}
@@ -20,10 +22,12 @@ const NavBar = () => {
     const [isOpen,setIsOpen] = useState(false);
 
     const ToogleMenu = () =>{
-        setIsOpen((prevstate)=>!prevstate)    }
+        setIsOpen(prevstate=>!prevstate)   
+    }
 
     return ( 
-        <div className="max-w-[90%] m-auto border-b border-gray-200">
+        
+        <div className="w-full m-auto border-b border-gray-200">
 
             {/*Code for the first section of the navbar*/}
 
@@ -55,15 +59,15 @@ const NavBar = () => {
                 <div className="flex gap-4">
                     <p className="relative"><a href="#"><FaRegHeart size={35}/><span className="absolute flex justify-center items-center bottom-7 left-7  rounded-full h-3 w-3 bg-[#F0F0F0]">0</span></a></p>
                     <p className="relative"><a href=""><HiOutlineShoppingBag size={35}/><span className="absolute flex justify-center items-center bottom-7 left-7 h-3 w-3 rounded-full">0</span></a></p>
-                    <p onClick={ToogleMenu} className="hidden max-sm:block"><HiOutlineMenu size={35}/></p>
+                    <p onClick={ToogleMenu} className="hidden z-50 max-sm:block cursor-pointer">{isOpen ? <IoIosCloseCircleOutline size={35}/>:<HiOutlineMenu size={35}/>}</p>
                 </div>
             </div>
 
 
             {/*Code for the second section of the navbar*/}
 
-            <div className="max-sm:hidden  flex justify-between items-center p-4">
-            <div className="relative w-[240px] z-10  bg-black">
+            <div className="flex justify-between items-center p-4">
+            <div className="max-sm:hidden relative w-[240px] z-10  bg-black">
                 <h1 onClick={ToogleArrow} className="flex justify-center text-white items-center gap-2 w-full h-12 bg-[#51AA1B] font-bold cursor-pointer"><IoMdMenu size={30} /> All Categories{isDown ?<IoIosArrowDown size={30}/>:<IoIosArrowUp size={30} />}</h1>
                     <ul className={`${isDown ? 'hidden': 'absolute bg-gray-200  w-full  top-12'}`}>
                     <li className="border-b py-2 px-6 border-gray-400">Electronics</li>
@@ -77,18 +81,24 @@ const NavBar = () => {
                     <li className="border-b py-2 px-6 border-gray-400">Speaker</li>
                    </ul> 
                 </div>
-                <ul className="flex gap-14">
-                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="/">Home</Link></li>
-                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="/products">Products</Link></li>
-                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="">About Us</Link></li>
-                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><a href="">Contact</a></li>
-                    <li className="flex justify-center hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><a href="">Blog</a></li>
-                </ul>
 
-                <div className="relative bg-[#FF6251] ">
+               {/* className={`lg:flex lg:gap-14 ${isOpen ? 'flex flex-col z-50 bg-slate-300 w-[85%] h-screen text-2xl fixed left-0 p-14 gap-10 right-10 top-0 duration-[1s]':'left-[-100vw] duration-[1s]'}`} */}
+
+                <ul className={`lg:flex lg:gap-14 duration-[1s] max-sm:bg-slate-300 max-sm:flex max-sm:flex-col max-sm:text-2xl max-sm:p-14 max-sm:gap-10 max-sm:z-50 max-sm:w-[80%] max-sm:fixed max-sm:top-0 max-sm:h-screen ${isOpen ? '   left-0   ':'max-sm:p-14 max-sm:gap-10 left-[-100vw] '}`}>
+                    <li onClick={ToogleMenu} className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="/">Home</Link></li>
+                    <li onClick={ToogleMenu} className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="/products">Products</Link></li>
+                    <li onClick={ToogleMenu} className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="/About">About Us</Link></li>
+                    <li onClick={ToogleMenu} className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="/contact">Contact</Link></li>
+                    <li onClick={ToogleMenu} className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"><Link to="/blog">Blog</Link></li>
+                </ul>
+                
+                <div className={`lg:hidden h-screen w-screen  z-40 fixed top-0  bg-black/50 left-0 ${isOpen ? 'left-0 duration-[0.5s]':'left-[-100vw] ease-in-out duration-[2s]'}`}/>
+
+
+                <div className="max-sm:hidden relative bg-[#FF6251] ">
                 <button className="   px-16 py-1 text-white text-sm font-bold">BLACK FRIDAY <span className="block text-xs">Get 45% Off</span></button>
                 </div>
-                
+               
             </div>
         </div>
      );
