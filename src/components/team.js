@@ -19,7 +19,7 @@ const Teams =[
         id:3,
         image:team3,
         title:"ADVISOR",
-        name:"Jony Smith"
+        name:"Kassahun Melaku"
     },
     {
         id:4,
