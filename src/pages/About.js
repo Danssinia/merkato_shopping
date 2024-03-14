@@ -95,11 +95,11 @@ const About = () => {
           {Teams.map((team) => (
             <div key={team.id} className="cursor-pointer group relative">
               {/*code for the hover effect*/}
-              <div className="bg-black/50 flex justify-center items-center group-hover:block opacity-0 hover:opacity-100 group-hover:duration-500 absolute  left-0 z-10 h-[400px] w-[280px] top-18">
-                <div className="flex justify-center items-center text-white">
-                  <TiSocialFacebook />
-                  <FaXTwitter />
-                  <FaInstagram />
+              <div className="bg-black/50 flex justify-center items-center group-hover:block opacity-0 hover:opacity-100 group-hover:duration-500 absolute  left-0 z-10 h-[400px] max-sm:w-full w-[280px] top-18">
+                <div className="flex h-full gap-3 font-bold justify-center items-center text-white">
+                  <TiSocialFacebook size={25} />
+                  <FaXTwitter size={20} />
+                  <FaInstagram size={20} />
                 </div>
               </div>
               {/* <div className="absolute top-0 w-[10px]"/> */}

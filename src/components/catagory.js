@@ -4,12 +4,12 @@ import { useContext, useState } from "react";
 import { catagoryContext } from "../context/catagoryContext";
 
 const Catagory = () => {
-  const { setCatagory,catagory } = useContext(catagoryContext);
+  const { setCatagory, catagory } = useContext(catagoryContext);
   const [subItem, setSubItem] = useState(arrays[0].subItems);
 
   const handleSelect = (subItem, itemId, catagory) => {
     setCatagory(catagory);
-  localStorage.setItem("catagory",catagory)
+    localStorage.setItem("catagory", catagory);
 
     setSubItem(subItem);
     ColorChanger(itemId);
@@ -22,7 +22,7 @@ const Catagory = () => {
 
   return (
     <div className="max-w-[90%] m-auto">
-      <div className="relative grid grid-cols-6 border h-[180px]  font-bold border-slate-300  mt-20 ">
+      <div className="max-sm:grid max-sm:grid-cols-3 max-sm:gap-6 relative grid grid-cols-6 border h-[180px]  font-bold border-slate-300  mt-20 ">
         {arrays.map((array) => (
           <div
             key={array.id}
