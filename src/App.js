@@ -10,6 +10,7 @@ import Products from "./pages/products";
 import Contact from "./pages/contact";
 import Blog from "./pages/blog";
 import About from "./pages/About";
+import Wishlist from "./components/wishlist";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="contact" element={<Contact/>}></Route>
             <Route path="About" element={<About/>}></Route>
             <Route path="blog" element={<Blog/>}></Route>
+            <Route path="wishlist" element={<Wishlist/>}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <Footer />

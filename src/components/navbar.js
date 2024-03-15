@@ -8,7 +8,8 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { IoIosCloseCircleOutline } from "react-icons/io";
-
+import { IoMdCloseCircle } from "react-icons/io";
+import fish from "../images/icons/fish.jpg";
 const NavBar = () => {
   // code for arrow control*
   const [isDown, setIsDown] = useState(true);
@@ -23,6 +24,13 @@ const NavBar = () => {
   const ToogleMenu = () => {
     setIsOpen((prevstate) => !prevstate);
   };
+
+
+  // code for cart state
+  const [isCart,setIsCart] = useState(false); 
+  const ToogleCart = () => {
+    setIsCart(prevstate=> !prevstate);
+  }
 
   return (
     <div className="relative w-full m-auto border-b border-gray-200">
@@ -66,19 +74,20 @@ const NavBar = () => {
         </div>
 
         <div className="flex gap-4">
-          <p className="relative">
+          <Link to="/wishlist"><p className="relative cursor-pointer">
             <p>
               <FaRegHeart size={35} />
-              <span className="absolute flex justify-center items-center bottom-7 left-7  rounded-full h-3 w-3 bg-[#F0F0F0]">
-                0
+              <span className="absolute flex justify-center items-center bottom-7 left-7  rounded-full h-4 w-4 bg-[#51aa1b] text-white text-[10px]">
+                1
               </span>
             </p>
           </p>
-          <p className="relative">
-            <p className="cursor-pointer">
+          </Link>
+          <p onClick={ToogleCart} className="relative">
+            <p  className="cursor-pointer">
               <HiOutlineShoppingBag size={35} />
-              <span className="absolute flex justify-center items-center bottom-7 left-7 h-3 w-3 rounded-full">
-                0
+              <span className="absolute flex bg-[#51AA1B] text-white text-[10px] justify-center items-center bottom-7 left-7 h-4 w-4 rounded-full">
+                1
               </span>
             </p>
           </p>
@@ -184,7 +193,21 @@ const NavBar = () => {
         </div>
       </div>
       {/* code for the cart */}
-      <div className="bg-black w-[300px] top-0 h-screen fixed z-50"></div>
+      {/* {isCart && ()} */}
+      <div className={`bg-white w-[350px] duration-700 top-0 h-screen fixed z-50 ease-in-out ${isCart ? ' right-0  ':'duration-500 right-[-100vw]'}  `}>
+        <p className="
+        text-xl pt-10 font-bold flex justify-around">Shopping Cart<span onClick={ToogleCart} className=" cursor-pointer text-gray-500 hover:text-gray-700 "><IoMdCloseCircle size={30}/></span></p>
+        <div className="grid grid-cols-2">
+          <img src={fish} alt=""  width={80} className="
+          ml-[25%] pt-[10%]"/>
+          <p className="flex flex-col justify-center items-center font-bold">Fish <span className="text-[#51AA1B]"> 1 x 150 ETB</span></p>
+        </div>
+        <p className="flex justify-end pr-10 font-bold">Subtotal: <span className="text-[#51AA1B]">150 ETB</span></p>
+        <div className="flex gap-4  pl-14 pt-10">
+          <button className="px-8 py-3 bg-[#51AA1B] flex justify-center items-center text-white font-bold text-xs rounded-full">View cart</button>
+          <button className="px-8 py-3 bg-[#51AA1B] flex justify-center items-center text-white font-bold text-xs rounded-full">Checkout</button>
+        </div>
+      </div>
     </div>
   );
 };
