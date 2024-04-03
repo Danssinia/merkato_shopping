@@ -6,16 +6,23 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { HiOutlineMenu } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoMdCloseCircle } from "react-icons/io";
 import fish from "../images/icons/fish.jpg";
+import meat2 from "../images/icons/meat2.jpg";
+import { FilterContext } from "../context/filterContext";
 const NavBar = () => {
   // code for arrow control*
   const [isDown, setIsDown] = useState(true);
   const ToogleArrow = () => {
     setIsDown((prevstate) => !prevstate);
   };
+  const {setFilter} = useContext(FilterContext)
+
+const handlechange = (e) => {
+  setFilter(e.target.value)
+}
 
   // code for menu control
 
@@ -32,13 +39,19 @@ const NavBar = () => {
     setIsCart(prevstate=> !prevstate);
   }
 
+  // code for category filter
+
+
+
+  
+
   return (
-    <div className="relative w-full m-auto border-b border-gray-200">
+    <div className="fixed z-40 top-10 max-sm:top-0 bg-white  w-full m-auto border-b border-gray-200">
       {/*Code for the first section of the navbar*/}
 
-      <div className="flex p-4 justify-between">
+      <div className="max-sm:pl-4 flex p-4 max-sm:p-0 max-sm:pt-2 justify-between">
         <Link to="/">
-          <h1 className="text-3xl font-bold">መርካቶ Shopping</h1>
+          <h1 className="text-3xl font-bold">መርካቶ ገበያ</h1>
         </Link>
         <div>
           <form action="">
@@ -50,21 +63,18 @@ const NavBar = () => {
                 placeholder="Find your product"
                 className="px-16  placeholder:font-bold placeholder:text-sm border-none outline-none"
               />
-              <select
+              <select onChange={handlechange}
                 name=""
                 id=""
                 className=" text-gray-500 text-sm  font-bold border-l-2 cursor-pointer bg-white border-gray-300  pl-2 "
               >
-                <option value="">All Categories</option>
-                <option value="">Beauty Products</option>
-                <option value="">Foods & Drinks</option>
-                <option value="">Women Clothing</option>
-                <option value="">Mens Clothing</option>
-                <option value="">Fruits</option>
-                <option value="">Vegetables</option>
-                <option value="">Mobile Accessories</option>
-                <option value="">Watch</option>
-                <option value="">Mobile</option>
+                <option value='All Categories'>All Categories</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Foods & Drinks">Foods & Drinks</option>
+                <option value="Office Elements">Office Elements</option>
+                <option value="Home Appliance">Home Appliance</option>
+                <option value="Beauty Products">Beauty Products</option>
+                <option value="Home Furnishings">Home Furnishings</option>
               </select>
               <p className="flex justify-center items-center bg-[#51AA1B] pl-2 pr-4 w-full">
                 <FaSearch />
@@ -74,11 +84,11 @@ const NavBar = () => {
         </div>
 
         <div className="flex gap-4">
-          <Link to="/wishlist"><p className="relative cursor-pointer">
+          <Link to="/merkato/wishlist"><p className="relative cursor-pointer">
             <p>
               <FaRegHeart size={35} />
-              <span className="absolute flex justify-center items-center bottom-7 left-7  rounded-full h-4 w-4 bg-[#51aa1b] text-white text-[10px]">
-                1
+              <span className="absolute flex justify-center items-center bottom-5 left-7  rounded-full h-4 w-4 bg-[#51aa1b] text-white text-[10px]">
+                3
               </span>
             </p>
           </p>
@@ -86,15 +96,15 @@ const NavBar = () => {
           <p onClick={ToogleCart} className="relative">
             <p  className="cursor-pointer">
               <HiOutlineShoppingBag size={35} />
-              <span className="absolute flex bg-[#51AA1B] text-white text-[10px] justify-center items-center bottom-7 left-7 h-4 w-4 rounded-full">
-                1
+              <span className="absolute flex bg-[#51AA1B] text-white text-[10px] justify-center items-center bottom-5 left-7 h-4 w-4 rounded-full">
+                2
               </span>
             </p>
           </p>
 
           <p
             onClick={ToogleMenu}
-            className="hidden z-50 max-sm:block cursor-pointer"
+            className="hidden z-50 max-sm:pr-4 max-sm:block cursor-pointer"
           >
             {isOpen ? (
               <IoIosCloseCircleOutline size={35} />
@@ -148,33 +158,33 @@ const NavBar = () => {
         >
           <li
             onClick={ToogleMenu}
-            className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"
+            className="flex justify-center  max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"
           >
-            <Link to="/">Home</Link>
+            <Link to="/merkato">Home</Link>
           </li>
           <li
             onClick={ToogleMenu}
             className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"
           >
-            <Link to="/products">Products</Link>
+            <Link to="/merkato/products">Products</Link>
           </li>
           <li
             onClick={ToogleMenu}
             className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"
           >
-            <Link to="/About">About Us</Link>
+            <Link to="/merkato/About">About Us</Link>
           </li>
           <li
             onClick={ToogleMenu}
             className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"
           >
-            <Link to="/contact">Contact</Link>
+            <Link to="/merkato/contact">Contact</Link>
           </li>
           <li
             onClick={ToogleMenu}
             className="flex justify-center max-sm:justify-start hover:text-[#51AA1B] font-semibold hover:duration-300 items-center gap-1"
           >
-            <Link to="/blog">Blog</Link>
+            <Link to="/merkato/blog">Blog</Link>
           </li>
         </ul>
 
@@ -194,7 +204,7 @@ const NavBar = () => {
       </div>
       {/* code for the cart */}
       {/* {isCart && ()} */}
-      <div className={`bg-white w-[350px] duration-700 top-0 h-screen fixed z-50 ease-in-out ${isCart ? ' right-0  ':'duration-500 right-[-100vw]'}  `}>
+      <div className={`bg-white w-[350px]  duration-700 top-0 h-screen fixed z-50 ease-in-out ${isCart ? ' right-0  ':'duration-500 right-[-100vw]'}  `}>
         <p className="
         text-xl pt-10 font-bold flex justify-around">Shopping Cart<span onClick={ToogleCart} className=" cursor-pointer text-gray-500 hover:text-gray-700 "><IoMdCloseCircle size={30}/></span></p>
         <div className="grid grid-cols-2">
@@ -203,6 +213,13 @@ const NavBar = () => {
           <p className="flex flex-col justify-center items-center font-bold">Fish <span className="text-[#51AA1B]"> 1 x 150 ETB</span></p>
         </div>
         <p className="flex justify-end pr-10 font-bold">Subtotal: <span className="text-[#51AA1B]">150 ETB</span></p>
+
+        <div className="grid grid-cols-2">
+          <img src={meat2} alt=""  width={80} className="
+          ml-[25%] pt-[10%]"/>
+          <p className="flex flex-col justify-center items-center font-bold">Meat <span className="text-[#51AA1B]"> 1 x 400 ETB</span></p>
+        </div>
+        <p className="flex justify-end pr-10 font-bold">Subtotal: <span className="text-[#51AA1B]">400 ETB</span></p>
         <div className="flex gap-4  pl-14 pt-10">
           <button className="px-8 py-3 bg-[#51AA1B] flex justify-center items-center text-white font-bold text-xs rounded-full">View cart</button>
           <button className="px-8 py-3 bg-[#51AA1B] flex justify-center items-center text-white font-bold text-xs rounded-full">Checkout</button>

@@ -133,6 +133,7 @@ const arrays = [
     id: 3,
     image: icon3,
     catagory: "Office Elements",
+    catagory: "Office Elements",
     items: "8 Items Available",
     market:"Trend",
     subItems: [

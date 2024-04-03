@@ -4,7 +4,7 @@ import { TiWorld } from "react-icons/ti";
 
 const Header = () => {
     return ( 
-        <div className="bg-[#51AA1B] max-sm:hidden p-2 w-full flex px-16 justify-between">
+        <div className="bg-[#51AA1B] fixed z-50 top-0 max-sm:hidden p-2 h-10 w-full flex px-16 justify-between">
             
             <ul className="flex gap-4 text-white text-sm">
                 <li><BsTruck className="inline mr-3" size={20} />Free Delivery</li>

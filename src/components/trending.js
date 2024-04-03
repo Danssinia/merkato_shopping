@@ -37,7 +37,7 @@ const Trending = () => {
            <div className='max-sm:flex max-sm:flex-col  grid grid-cols-4 gap-8 mt-8'>
             {subItem.map((subItem)=>(
                 <div className='max-sm:rounded-lg max-sm:pb-10 relative group border hover:opacity-80 hover:duration-500 cursor-pointer' key={subItem.id}>
-                    <Link to={`details/${subItem.id}`}>
+                    <Link to={`/merkato/details/${subItem.id}`}>
                     <p className='flex justify-center items-center'><img src={subItem.image} alt="" /></p>
                     <p className='max-sm:font-bold max-sm:text-[25px] flex justify-center items-center font-semibold'>{subItem.name}</p>
                     <p className='flex justify-end pr-6 text-[#83B735] font-bold'>{subItem.price}</p>

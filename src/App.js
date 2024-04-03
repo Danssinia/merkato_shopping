@@ -11,25 +11,28 @@ import Contact from "./pages/contact";
 import Blog from "./pages/blog";
 import About from "./pages/About";
 import Wishlist from "./components/wishlist";
+import FilterProvider from "./context/filterContext";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <CatagoryContextProvider>
+          <FilterProvider>
           <Header />
           <NavBar />
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="details/:id" element={<Deatils />}></Route>
-            <Route path="products" element={<Products/>}></Route>
-            <Route path="contact" element={<Contact/>}></Route>
-            <Route path="About" element={<About/>}></Route>
-            <Route path="blog" element={<Blog/>}></Route>
-            <Route path="wishlist" element={<Wishlist/>}></Route>
+            <Route path="/merkato" element={<Home />}></Route>
+            <Route path="merkato/details/:id" element={<Deatils />}></Route>
+            <Route path="merkato/products" element={<Products/>}></Route>
+            <Route path="merkato/contact" element={<Contact/>}></Route>
+            <Route path="merkato/About" element={<About/>}></Route>
+            <Route path="merkato/blog" element={<Blog/>}></Route>
+            <Route path="merkato/wishlist" element={<Wishlist/>}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <Footer />
+          </FilterProvider>
         </CatagoryContextProvider>
       </BrowserRouter>
     </>

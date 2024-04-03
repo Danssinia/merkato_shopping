@@ -6,7 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 const About = () => {
   return (
-    <div className=" max-w-[90%] m-auto  mt-20">
+    <div className=" max-w-[90%] m-auto  lg:mt-56 mt-20">
       <div className="max-sm:flex max-sm:flex-col grid grid-cols-2 ">
         <div>
           <div className="text-[130px] max-sm:text-[80px] max-sm:top-[20%] font-bold absolute top-[26%] opacity-5">

@@ -17,7 +17,7 @@ const Hero = () => {
         setCurrentIndex(newIndex)
     }
     return ( 
-        <div className='relative group'>
+        <div className='relative group lg:mt-48'>
             <div>
             <img src={images[currentIndex]} alt="Electronics" className='group w-full h-[600px] object-cover'  />
             </div>

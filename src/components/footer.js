@@ -1,4 +1,10 @@
 const Footer = () => {
+    const scrollTop = ()=>{
+        window.scrollTo({
+            top:0,
+            behavior:"smooth",
+        })
+    }
     return ( 
         <div className="mt-32 border-t">
             <div className="max-sm:flex max-sm:flex-col  pt-10 grid grid-cols-4 gap-20 max-w-[80%]  m-auto">
@@ -24,7 +30,7 @@ const Footer = () => {
                 <li>Stadium</li>
             </ul>
             
-            <button className="bg-[#FF6251] w-[200px] h-[60px]">BACK TOP</button>
+            <button onClick={scrollTop} className="bg-[#FF6251] w-[200px] h-[60px]">BACK TOP</button>
             </div>
             <p className="flex justify-center items-center mt-10 p-6 bg-slate-100"> All Rights Reserved &copy;Copyright 2024 by Danssinia</p>
         </div>

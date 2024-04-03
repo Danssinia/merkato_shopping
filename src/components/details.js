@@ -80,7 +80,7 @@ export const Deatils = () => {
         <p className="max-w-[85%] m-auto text-3xl font-bold mb-10 mt-10">Related Products</p>
       <div className=" max-w-[85%] max-sm:flex max-sm:flex-col  m-auto grid grid-cols-3 gap-8">
         {related.map((related) => (
-          <Link to={`/details/${related.id}`} onClick={window.scrollTo(0,0)}>
+          <Link to={`/merkato/details/${related.id}`} onClick={window.scrollTo(0,0)}>
             <div key={related.id} className="group hover:cursor-pointer hover:opacity-70 hover:duration-500 relative shadow-lg hover:shadow-xl border h-[500px] border-slate-300">
             <img src={related.image} width={200}  className="flex justify-center w-full items-center" />
             <p className=" text-xl pt-10 font-bold flex justify-center items-center">{related.name}</p>

@@ -23,17 +23,17 @@ const News = () => {
           <img
             src={hum1}
             alt=""
-            className="w-full max-sm:h-[300px] max-sm:object-cover"
+            className="w-full  max-sm:h-[300px] max-sm:object-cover"
           />
           <p className="text-blue-600  font-bold max-w-[85%] m-auto pt-6">
-            Electronics
+            Health and Food
           </p>
           <p className="max-w-[85%] hover:text-[#51AA1B] cursor-pointer hover:duration-700 max-lg:text-xl  m-auto py-4 text-2xl font-bold">
-            Motivation is Not Enough For People! Discipline Is.
+          Farm-to-Table  and Sustainable Food Practices
           </p>
           <p className="max-w-[85%] m-auto text-slate-500 flex gap-8 pb-10">
             <span className="flex text-xs justify-center items-center gap-4">
-              <FaRegCommentAlt size={20} />0
+              <FaRegCommentAlt size={20} />2
             </span>{" "}
             <span className="flex justify-center items-center gap-4 text-xs">
               <FaRegClock size={20} />
@@ -46,21 +46,21 @@ const News = () => {
           <img
             src={hum2}
             alt=""
-            className="max-sm:h-[300px] max-sm:object-cover"
+            className="max-sm:h-[300px] h-[250px] w-full object-cover max-sm:object-cover"
           />
           <p className="text-blue-600 font-bold max-w-[85%] m-auto pt-6">
             Electronics
           </p>
           <p className="max-w-[85%] max-lg:text-xl hover:text-[#51AA1B] cursor-pointer hover:duration-700  m-auto py-4 text-2xl font-bold">
-            Motivation is Not Enough For People! Discipline Is.
+          Latest Innovations and Gadgets in the Electronics Market  
           </p>
           <p className="max-w-[85%] m-auto text-slate-500 flex gap-8 pb-10">
             <span className="flex text-xs justify-center items-center gap-4">
-              <FaRegCommentAlt size={20} />0
+              <FaRegCommentAlt size={20} />3
             </span>{" "}
             <span className="flex justify-center items-center gap-4 text-xs">
               <FaRegClock size={20} />
-              March 1,2024
+              March 12,2024
             </span>
           </p>
         </div>
@@ -72,18 +72,18 @@ const News = () => {
             className="max-sm:h-[300px] max-sm:object-cover"
           />
           <p className="text-blue-600 font-bold max-w-[85%] m-auto pt-6">
-            Electronics
+            Health and Food
           </p>
           <p className="max-w-[85%] max-lg:text-xl hover:text-[#51AA1B] cursor-pointer hover:duration-700  m-auto py-4 text-2xl font-bold">
-            Motivation is Not Enough For People! Discipline Is.
+          the Intersection of Health, Nutrition, and Delicious Cuisine
           </p>
           <p className="max-w-[85%] m-auto text-slate-500 flex gap-8 pb-10">
             <span className="flex text-xs justify-center items-center gap-4">
-              <FaRegCommentAlt size={20} />0
+              <FaRegCommentAlt size={20} />10
             </span>{" "}
             <span className="flex justify-center items-center gap-4 text-xs">
               <FaRegClock size={20} />
-              March 1,2024
+              April 1,2024
             </span>
           </p>
         </div>
